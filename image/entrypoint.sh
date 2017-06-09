@@ -38,4 +38,5 @@ echo "Sleep ${CURL_SLEEP} seconds"
 
 sleep ${CURL_SLEEP}
 
+echo "CURL Command: $@"
 exec "$@"
