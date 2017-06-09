@@ -84,3 +84,6 @@ push: settings build_docker
 	docker tag  $(version_image) $(latest_image)
 	docker push $(version_image)
 	docker push $(latest_image)
+
+run: settings
+	docker run -t -i  $(version_image) -fsSL https://www.google.com/
