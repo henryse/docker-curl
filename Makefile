@@ -1,3 +1,5 @@
+cur_dir:=$(shell echo $(CURDIR) | sed 's/ /\\ /g')
+
 ifdef VERSION
 	project_version:=$(VERSION)
 else
@@ -7,13 +9,13 @@ endif
 ifdef PROJECT_NAME
 	project_name:=$(PROJECT_NAME)
 else
-	project_name:=$(shell basename $(CURDIR))
+	project_name:=$(shell basename $(cur_dir))
 endif
 
 ifdef SRC_DIR
 	source_directory:=$(SRC_DIR)
 else
-	source_directory:=$(CURDIR)/image
+	source_directory:=$(cur_dir)/image
 endif
 
 repository:=henryse/$(project_name)
